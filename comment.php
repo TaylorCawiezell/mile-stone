@@ -41,7 +41,7 @@ color: #000000;
      <input id='document' type='file' name="file" multiple />
     <input type="submit" id="submit"  value="Submit Comment">
   </form>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
   var formData = $('form');
