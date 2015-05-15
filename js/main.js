@@ -33,16 +33,6 @@ form.addEventListener('submit', function(event) { // listen for form submitting
     });
     
     $('body').fadeIn(1500);
- 
-    
-    $('.person-hover').click(function(){
-        $('.lightbox2').fadeToggle();
-        
-    });
-    
-    $('.exit').click(function(){
-        $('.lightbox2').fadeOut();
-    });
     
     $('.add-person').click(function(){
        $('.pop-up').fadeIn(); 
@@ -58,6 +48,37 @@ form.addEventListener('submit', function(event) { // listen for form submitting
           $('.pop-up').fadeOut(); 
     });
     
+    $('.side-nav').hide();
+    $('.menu').click(function(){
+        //$('.side-nav').slideToggle(direction: "left");
+        $('.side-nav').slideToggle();
+    });
+    
+    $('.light-box2').click(function(){
+        
+    });
+    
+    $('.person-hover').click(function(){
+        var time = $(this).parent().find('.time').val();
+        var phone = $(this).parent().find('.phone').val();
+        var email = $(this).parent().find('.email').val();
+        var name = $(this).parent().find('.name').val();
+        var image = $(this).parent().find('.image').val();
+        var color = $(this).parent().find('.color').val();
+        console.log(image);
+        $('.lightbox2 .name').html(name);
+        $('.lightbox2 .phone').html(phone);
+        $('.lightbox2 .email').html(email); 
+        $('.lightbox2 .time').html(time);
+        $('.lightbox2 .image').css('background-image', 'url(' + image + ')'); 
+         $('.lightbox2 .image').css('border-color', color); 
+        $('.lightbox2').fadeToggle();
+        
+    });
+    
+    $('.exit').click(function(){
+        $('.lightbox2').fadeOut();
+    });
     
 });
 

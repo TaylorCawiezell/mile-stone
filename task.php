@@ -22,7 +22,7 @@ if(isset($_GET['id']) && isset($_GET['taskid'])){
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php echo $rows['name'] ?></title>
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/foundation.css" />
      <link rel="stylesheet" href="css/main.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -30,9 +30,17 @@ if(isset($_GET['id']) && isset($_GET['taskid'])){
   <body>
       
     
+     <section class="side-nav">
+            <a href="dashboard.php?id=<?php echo $id ?>"><h2>My Dashboard</h2></a>
+            <a href="team.php?id=<?php echo $id ?>"><h2>My Team</h2></a>
+             <a href="index.php"><h2>Logout</h2></a>
+            
+      </section>
     <section class="nav">
       <article class="large-12 columns">
+           <a><img class="menu" src="/img/menu.png"  /></a>
         <h3>mile stone</h3>
+         
       </article>
     </section>
       <br />
@@ -53,22 +61,24 @@ if(isset($_GET['id']) && isset($_GET['taskid'])){
       
     <article class="large-12 columns documentation">
         <h1 class="center white">Objectives and matierials</h1>
-       <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
+        <?php 
+        $stmt = $dbh->prepare("
+                                SELECT * FROM documents
+                                where taskId='".$taskid."';"
+                                );
+           $stmt->execute();
+           $doc = $stmt->fetchall(PDO::FETCH_ASSOC);
+           
+foreach($doc as $row) {
+    echo '<section class="large-3 columns document">
+            <a href="'.$row['document'].'" target="_blank"><img src="img/document.png" /></a>
+           <h3>'.$row['document'].'</h3>
+       </section>';
+    
+}
+        
+        ?>
+      
        
     </article>
       

@@ -191,12 +191,19 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
   </head>
   <body>
    <?php echo $alert; ?>   
-    
+    <section class="side-nav">
+            <a href="team.php?id=<?php echo $id ?>"><h2>My Team</h2></a>
+             <a href="index.php"><h2>Logout</h2></a>
+            
+      </section>
     <section class="nav">
       <article class="large-12 columns">
+           <a><img class="menu" src="/img/menu.png"  /></a>
         <h3>mile stone</h3>
+         
       </article>
     </section>
+      
       <br />
       <br />
       <br />

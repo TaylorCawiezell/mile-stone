@@ -51,6 +51,17 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
      $stmt->execute();
         
    }
+    
+     foreach ($_POST['file'] as $row) {
+    $stmt = $dbh->prepare("
+                            INSERT INTO documents(document,taskId)
+                            VALUES ('".$row."','".$newTask."');
+                            ");
+     
+     $stmt->execute();
+        
+   }
+    
     $stmt = $dbh->prepare("
                             INSERT INTO userTask(taskId,userId)
                             VALUES ('".$newTask."','".$rows['id']."');
@@ -81,9 +92,17 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
       <?php echo $alert; ?>
        <form id="form" action="create-task.php?id=<?PHP echo $id ?>" method="POST" enctype="multipart/form-data">
     
+     <section class="side-nav">
+            <a href="dashboard.php?id=<?php echo $id ?>"><h2>My Dashboard</h2></a>
+            <a href="team.php?id=<?php echo $id ?>"><h2>My Team</h2></a>
+             <a href="index.php"><h2>Logout</h2></a>
+            
+      </section>
     <section class="nav">
       <article class="large-12 columns">
+           <a><img class="menu" src="/img/menu.png"  /></a>
         <h3>mile stone</h3>
+         
       </article>
     </section>
       <br />
@@ -100,30 +119,20 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
             <button name="create" >finished creating</button>
           
       </article>
+    
     </section>
-      
-    <article class="large-12 columns documentation">
-        <h1 class="center white">Objectives and matierials</h1>
-       <section class="large-3 columns document">
-            <img src="img/document.png" />
-          <input type="file" multiple name="file[]" />
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-         <section class="large-3 columns document">
-            <img src="img/document.png" />
-           <h3>document.png</h3>
-       </section>
-       
-    </article>
-      
+    
    
+        <article class="large-12 columns documentation">
+        <h1 class="center white">Objectives and matierials</h1>
+       <input id="uploadButton" type="button" value="Upload" onclick='$("#document").click()'> 
+         <div id="documents">
+        
+       </div>
+    </article>
+   
+      
+ 
        
        
       
@@ -207,10 +216,22 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
  </div>     
       
     
-         
+        
       </article>
           </section>
-      
+       <br />
+          <br />
+          <br />
+        
+      </form>
+   
+     <form id="form2" method="POST" enctype="multipart/form-data" >
+    <!-- need to supply post id with hidden fild -->
+     <div id="progressbox" style="display:none;"><div id="progressbar"></div><div id="statustxt">0%</div></div>
+     <input id='document' type='file' name="file" style="display:none;"/>
+     
+  </form>
+       
       <br />
       <br />
     <script src="js/vendor/jquery.js"></script>
@@ -219,6 +240,55 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
     <script>
       $(document).foundation();
     </script>
-      </form>  
+      
+      
+     <script>
+$(document).ready(function(){
+  var formData = $('#form2');
+  var submit = $('#submit2');
+  var progressbox     = $('#progressbox');
+	var progressbar     = $('#progressbar');
+	var statustxt       = $('#statustxt');
+	var completed       = '0%';
+    $('#document').change(function(){
+        $('#form2').submit();
+    });
+    
+  formData.on('submit', function(e) {
+    // prevent default action
+    e.preventDefault();
+    // send ajax request
+    $.ajax({
+      url: 'ajax_comment.php',
+      type: 'POST',
+            // Type of request to be send, called as method // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+      contentType: false,
+      cache: false,             // To unable request pages to be cached
+      processData:false,
+      data: new FormData(this),//form serizlize data
+      beforeSend: function(){
+        // change submit button value text and disabled it
+        submit.val('Submitting...').attr('disabled', 'disabled');
+      },
+      success: function(data){
+        // Append with fadeIn see http://stackoverflow.com/a/978731
+          
+        var item = $(data).hide().fadeIn(800);
+        $('#documents').append(data).slide();
+
+        // reset form and button
+        formData.trigger('reset');
+        submit.val('Submit Comment').removeAttr('disabled');
+      },
+      error: function(e){
+        alert(e);
+      }
+    });
+  });
+    
+   
+   
+});
+</script> 
   </body>
 </html>

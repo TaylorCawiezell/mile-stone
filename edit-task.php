@@ -86,9 +86,17 @@ if(isset($_POST['create'])){
       <?php echo $alert; ?>
        <form id="form" action="edit-task.php?id=<?PHP echo $id ?>&taskid=<?PHP echo $taskid ?>" method="POST" enctype="multipart/form-data">
     
+     <section class="side-nav">
+            <a href="dashboard.php?id=<?php echo $id ?>"><h2>My Dashboard</h2></a>
+            <a href="team.php?id=<?php echo $id ?>"><h2>My Team</h2></a>
+             <a href="index.php"><h2>Logout</h2></a>
+            
+      </section>
     <section class="nav">
       <article class="large-12 columns">
+           <a><img class="menu" src="/img/menu.png"  /></a>
         <h3>mile stone</h3>
+         
       </article>
     </section>
       <br />

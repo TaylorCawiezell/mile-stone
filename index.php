@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mile Stone</title>
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/foundation.css" />
      <link rel="stylesheet" href="css/main.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -101,20 +101,20 @@ if(isset($_POST['login'])){
      <section class="promo">
       <article class="large-4 columns">
             <img src="img/promo1.png" width="250" /><br />
-          <p>This is an amazing feature that makes you awesome! This is an amazing feature that makes you awesome!</p>
+          <h4>Group your organization based on colors, creating a personalized experience for your volenteers.</h4>
       </article>
       <article class="large-4 columns">
             <img src="img/promo2.png"  width="250" /><br /><br />
-             <p>This is an amazing feature that makes you awesome! This is an amazing feature that makes you awesome!</p>
+             <h4>Customize each task to align with the work it requires.</h4>
       </article>
        <article class="large-4 columns">
             <img src="img/promo3.png"  width="250" /><br />
-             <p>This is an amazing feature that makes you awesome! This is an amazing feature that makes you awesome!</p>
+             <h4>Upload documentation to ensure every person has everything they need to be successful!</h4>
       </article>
     </section>
     <article class="large-12 columns information">
-           <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem urna, sodales vitae ligula at, tincidunt ultricies turpis. Suspendisse ac vehicula tortor. Sed ex nisi, eleifend at pretium eu, congue sed nisi. Suspendisse quis maximus dui. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec lobortis sit amet nulla et molestie. Suspendisse vestibulum tincidunt massa, ut varius ipsum tincidunt pellentesque. Nulla quis nibh nec ante ullamcorper gravida sit amet quis lacus. Morbi porttitor ultrices lectus, a ornare felis malesuada et. Curabitur placerat felis et quam maximus tincidunt. Aliquam ornare porttitor nulla, sed congue nisi vestibulum in.</p>
+           <h3>Mile Stone is placing the right people in the right places.</h3>
+             <h4>Here at Mile Stone we believe that your volenteers are the mile stone's to success. Mile Stone allows you to organize, customize and monitor your dayly tasks. Create a new group today and start aligning the expectations for every task!</h4>
       </article>
     
     <script src="js/vendor/jquery.js"></script>

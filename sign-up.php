@@ -124,7 +124,7 @@ $stmt->execute();
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mile Stone</title>
-    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/foundation.css" />
      <link rel="stylesheet" href="css/main.css" />
     <script src="js/vendor/modernizr.js"></script>
@@ -164,16 +164,16 @@ $stmt->execute();
       <div class="large-12 columns">
         <div class="center-it">
     <div class="radios">
-    <input type="radio" name="color" value="red" id="r0"  required />
+    <input type="radio" name="color" value="#F72828" id="r0"  required />
     <label class="radio color-choice red" for="r0"></label>    
         
-    <input type="radio" name="color" value="blue" id="r1"  />
+    <input type="radio" name="color" value="#42ACE0" id="r1"  />
     <label class="radio color-choice blue" for="r1"></label>
    
-    <input type="radio" name="color" value="green" id="r2" />
+    <input type="radio" name="color" value="#00FF18" id="r2" />
     <label class="radio color-choice green" for="r2"></label>
     
-    <input type="radio" name="color" value="yellow" id="r3" />
+    <input type="radio" name="color" value="#FAE300" id="r3" />
     <label class="radio color-choice yellow" for="r3"></label>
     </div>
           
