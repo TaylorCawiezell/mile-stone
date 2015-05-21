@@ -31,7 +31,7 @@ if(isset($_POST['login'])){
 				$type = str_replace("image/",".",$_FILES['file']['type']);
 				//If statement to ensire file type is jpeg or png before uploading
 				if ($type == ".jpeg" || $type == ".png" || $type == ".jpg" || $type == ".tiff"){
-					$imgdir = "/files/";
+					$imgdir = "./files/";
 					$imgname = $_FILES['file']['name'];
 					$tmp = $_FILES['file']['tmp_name'];
 					$img = $imgdir.$imgname;
