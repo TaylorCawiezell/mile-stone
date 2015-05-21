@@ -83,7 +83,7 @@ if(isset($_GET['id'])){
                 <input type="hidden" class="name" value="'.$row['fname'].'" />
                 <input type="hidden" class="image" value="'.$row['image'].'" />
                 <input type="hidden" class="color" value="'.$row['color'].'" />
-                <div class="person-hover"><br /><img src="img/view.gif" /></div>
+                <div class="person-hover"><br /><img src="img/view.gif" width="150"/></div>
             </div>
           <h3 class="center name">'.$row['fname'].'</h3>
           </article>';

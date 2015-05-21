@@ -52,6 +52,7 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
         
    }
     
+    if(isset($_POST['file'])){
      foreach ($_POST['file'] as $row) {
     $stmt = $dbh->prepare("
                             INSERT INTO documents(document,taskId)
@@ -60,6 +61,7 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
      
      $stmt->execute();
         
+   }
    }
     
     $stmt = $dbh->prepare("

@@ -190,6 +190,7 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
     <script src="js/foundation.min.js"></script>
   </head>
   <body>
+      
    <?php echo $alert; ?>   
     <section class="side-nav">
             <a href="team.php?id=<?php echo $id ?>"><h2>My Team</h2></a>
@@ -203,7 +204,7 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
          
       </article>
     </section>
-      
+      <div class="container">
       <br />
       <br />
       <br />
@@ -288,8 +289,8 @@ if($rows['admin'] == 'no'){
                 <article class="large-12 columns ">
                 <section class="first job-over" style="background:'.$row['taskcolor'].';">
                     <div class="job-hover" style="height:100px;">
-                        <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="250"/></a>
-                        <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
+                        <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="200"/></a>
+                        <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="90"/></a>
                     </div>
                         <h1>'.$row['date'].'</h1>
                         <br />
@@ -306,8 +307,8 @@ if($rows['admin'] == 'no'){
                 <br />
                 <h1>'.$row['name'].'</h1>
                 <div class="job-hover">
-                 <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="250"/></a>
-                 <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
+                 <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="150"/></a>
+                 <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="70"/></a>
                  </div>
                 </section>
                 </article>';
@@ -318,8 +319,8 @@ if($rows['admin'] == 'no'){
                 <article class="large-4 columns">
                 <section class="rest job-over" style="background:'.$row['taskcolor'].';">
                 <div class="job-hover" style="height:100px;">
-                 <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="250"/></a>
-                <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
+                 <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="150"/></a>
+                <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="70"/></a>
                 </div>
             <h1>'.$row['date'].'</h1>
             <br />
@@ -399,7 +400,7 @@ if($rows['admin'] == 'no'){
             }
         ?>
   
-    
+    </div>
     <script src="js/main.js"></script>
     <script>
       $(document).foundation();

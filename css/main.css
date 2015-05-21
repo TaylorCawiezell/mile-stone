@@ -311,6 +311,8 @@ body{
     padding:10px;
 }
 
+
+
 .first{
     margin-top: -120px;
     height:300px;
@@ -318,7 +320,12 @@ body{
 
 .first h1,.second h1,.rest h1{
     color:#ffffff;
-    font-size: 3.5em;
+    font-size: 2.5em;
+}
+
+.second,.rest{
+    height:200px;
+    font-size: .9em;
 }
 
 .type-over {
@@ -331,12 +338,12 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height:100% !important;
     background-color: rgba(0,0,0,0.3);
     color: #fff;
-    padding: 50%;
-    padding: 50%;
-    border-radius: 1000px;
+  
+
+    border-radius: 500px;
     opacity:0;
     transition: all .5s;
     -webkit-transition: all .5s;
@@ -357,6 +364,13 @@ body{
     transition: all .5s;
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
+}
+
+.person-hover img{
+    position: relative;
+    margin: auto;
+    left:15px;
+    top:10px
 }
 
 .person-hover:hover {
@@ -400,10 +414,12 @@ body{
 
 .type-hover img{
      position: relative;
-    width: 900% !important;
-    max-width: 900%;
-    right:350%;
-    bottom:400%;
+    width: 200px !important;
+    margin-left:auto;
+    margin-right:auto;
+    top:25%;
+    left:60px
+   
    
 }
 
@@ -512,6 +528,10 @@ body{
     margin-left: auto;
     margin-right: auto; 
 }
+.radio{
+    transition: all 1s ease-in;
+    -webkit-transition: all .2s ease-in;
+}
 
 input[type=radio]{
     display:none
@@ -522,8 +542,12 @@ input[type=radio]{
 }
 
 .radios input[type=radio]:checked + .radio{
-    border:4px solid #474747;
+    /*border:4px solid #474747;*/
+    width:125px;
+    height:125px;
 }
+
+
 
 .alert-pop{
     color:#474747;
@@ -594,4 +618,164 @@ input[type=radio]{
     color:white;
     
 }
+
+.container{
+    max-width: 900px;
+    margin:auto;
+}
+
+.signup-1,.signup-2,.signup-3,.signup-4,.signup-5{
+    width:80%;
+    margin:auto;
+    text-align:center;
+    font-family: 'Quicksand', sans-serif;
+    margin-top:50px;
+    border:5px solid #3abeef;
+    padding:30px;
+    border-radius: 20px;
+    transition: all;
+}
+
+.signup-3{
+    
+}
+
+.pulse{
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.0
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+
+.signup-1 input[type=text],.signup-3 input[type=text],.signup-2 input[type=text],.signup-4 input[type=text],.signup-4 input[type=text],.signup-4 input[type=email],.signup-4 input[type=phone],.signup-4 input[type=password],.signup-5 input[type=text],.signup-5 input[type=email],.signup-5 input[type=phone],.signup-5 input[type=password]{
+     height:60px;
+     font-size: 30px;
+}
+
+.signup-3 select{
+     height:60px;
+     font-size: 30px;
+     font-weight: lighter;
+}
+
+
+.position{
+    height:50px;
+    width:50px;
+    border-radius: 50px;
+    border:2px solid #00FF18;
+    float:left;
+    margin:40px;
+    
+}
+
+.pos{
+    background: #00FF18;
+}
+
+.next{
+    width:100px;
+    height:100px;
+    border-radius: 100px;
+    background: #00FF18;
+    position: relative;
+    left:40%;
+    top:10px;
+}
+
+.back,.next2,.back2,.next3,.back3,.next4,.back4,.next5{
+    width:100px;
+    height:100px;
+    border-radius: 100px;
+    background: #00FF18;
+    
+
+}
+
+.back,.back2,.back3,.back4{
+    margin-right:70%;
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+    transform: rotate(180deg); 
+}
+
+.insert{
+    color:#00FF18;
+}
+
+.gold-choice{
+    background:#FAE300;
+    border-radius: 10px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.blue-choice{
+     background:#42ACE0;
+    border-radius: 10px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.red-choice{
+    background:#F72828;
+    border-radius: 10px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.green-choice{
+    background:#00FF18;
+    border-radius: 10px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.blue-choice,.blue-choice p,.blue-choice h1{
+   
+    color:#ffffff;
+}
+
+.red-choice,.red-choice p,.red-choice h1{
+    
+    color:#ffffff;
+}
+
+.green-choice,.green-choice p,.green-choice h1{
+    
+    color:#ffffff;
+}
+
+input[type=checkbox]{
+    zoom:1.5;
+  transform:scale(1.5);
+  -ms-transform:scale(1.5);
+  -webkit-transform:scale(1.5);
+  -o-transform:scale(1.5);
+  -moz-transform:scale(1.5);
+  transform-origin:0 0;
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -o-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+}
+
+.login{
+    width:50%;
+    background:#00FF18;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+
+
+
+
+
 
