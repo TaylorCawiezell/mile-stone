@@ -31,21 +31,15 @@ if(isset($_GET['id'])){
      <section class="lightbox2">
             <br />
           <a><span class="exit">x</span></a>
-         <div class="circular-person type-over image" style="position:relative;">
+         <div class="circular-person type-over image" style="position:relative;"></div>
+             <div style="clear:both;"></div>
              
-             <br/>
-             <br />
-             <br/>
-             <br />
-             <br/>
-             <br />
-             <br/>
-             <br />
-             
+          
              <br />
              <h3 class='name'>yo@yahoo.com</h3>
+             <h3 class='email'>yo@yahoo.com</h3>
              <h3 class='phone'>850-502-1087</h3>
-             <hr />
+             <br />
              <h3>Available</h3>
              <h3 class='time'>9am - 5pm</h3>
           

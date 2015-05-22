@@ -1,6 +1,8 @@
 $(document).foundation();
 
 $(document).ready(function(){
+   
+    
     $('.cta').css('background-position','center ' + '1px');
     $('.color').css('background-position','center ' + '1px');
     
@@ -54,10 +56,28 @@ form.addEventListener('submit', function(event) { // listen for form submitting
         $('.side-nav').slideToggle();
     });
     
-    $('.light-box2').click(function(){
-        
+    $('body').click(function(){
+       
+       $('.lightbox2').hide();
+        $('.side-nav').hide();
+   });
+    
+    $('.lightbox2').click(function(){
+         event.stopPropagation();
     });
     
+     $('.side-nav').click(function(){
+         event.stopPropagation();
+    });
+    
+     $('.menu').click(function(){
+         event.stopPropagation();
+         $('.lightbox2').hide();
+    });
+
+    $('.person-hover').click(function(){
+         event.stopPropagation();
+    });
     $('.person-hover').click(function(){
         var time = $(this).parent().find('.time').val();
         var phone = $(this).parent().find('.phone').val();
@@ -72,7 +92,9 @@ form.addEventListener('submit', function(event) { // listen for form submitting
         $('.lightbox2 .time').html(time);
         $('.lightbox2 .image').css('background-image', 'url(' + image + ')'); 
          $('.lightbox2 .image').css('border-color', color); 
+         $('.side-nav').hide();
         $('.lightbox2').fadeToggle();
+        
         
     });
     
@@ -261,6 +283,8 @@ form.addEventListener('submit', function(event) { // listen for form submitting
     $("#picture").change(function(){
         readURL(this);
     });
+    
+    
 
 });
 

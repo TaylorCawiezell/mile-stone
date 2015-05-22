@@ -168,7 +168,7 @@ p,h1,h2,h3,h4{
     top:15%;
     border-radius:10px;
     display: none;
-    height:500px;
+    padding:25px;
 }
 
 
@@ -292,11 +292,12 @@ body{
 
 .alert:hover{
      background: rgba(0,0,0,.7);
+   
 }
 
 .alerts{
     margin-top:10px;
-    height:480px;
+    height:450px;
     overflow: scroll;
 }
 
@@ -555,10 +556,7 @@ input[type=radio]{
     
 }
 
-.alert-pop button{
-    width:50%;
-    
-}
+
 
 #edit-header,#edit-header:focus,#edit-date,#edit-date:focus,#edit-time,#edit-time:focus{
     text-align: center;
@@ -771,6 +769,20 @@ input[type=checkbox]{
     background:#00FF18;
     font-family: 'Quicksand', sans-serif;
     
+}
+
+.alert-yes,.alert-no{
+    background:#00FF18;
+    border-radius:100px;
+    width:70px;
+    height:70px;
+    text-align: center;
+    padding: 10px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.alert-no{
+    background:#42ACE0;
 }
 
 

@@ -238,9 +238,9 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
                    
                  }else{
   				echo '<div class="alert alertclick'.$row['alertId'].'"  style="background:'.$row['taskcolor'].';">you have a new invite!</div>
-                      <div class="alert-pop alert'.$row['alertId'].'"><h3>Your Invited to Take Place In "'.$row['name'].'"</h3>
-                      <a href="dashboard.php?id='.$row['id'].'&alertId='.$row['alertId'].'&responce=yes&alerttaskid='.$row['taskId'].'" ><button>Yes</button></a>
-                      <a href="dashboard.php?id='.$row['id'].'&alertId='.$row['alertId'].'&responce=no&alerttaskid='.$row['taskId'].'" ><button>No</button></a>
+                      <div class="alert-pop alert'.$row['alertId'].'"><h3>Your Invited to "'.$row['name'].'"</h3>
+                      <a href="dashboard.php?id='.$row['id'].'&alertId='.$row['alertId'].'&responce=yes&alerttaskid='.$row['taskId'].'" ><button class="alert-yes">Yes</button></a>
+                      <a href="dashboard.php?id='.$row['id'].'&alertId='.$row['alertId'].'&responce=no&alerttaskid='.$row['taskId'].'" ><button class="alert-no">No</button></a>
                       </div>
                       <script>
                         $("document").ready(function(){
@@ -261,7 +261,7 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
                     <br />
                     <br />
                     <br />
-                    <h1 style='color:#474747;'>You Have No Pending Invites</h1>";
+                    <h3 style='color:#474747;'>You Have No Pending Invites</h3>";
                     }
 	         ?>
             
@@ -340,7 +340,8 @@ if($rows['admin'] == 'no'){
                 <article class="large-12 columns ">
                 <section class="first job-over" style="background:'.$row['taskcolor'].';">
                     <div class="job-hover" style="height:100px;">
-                        <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="200"/></a>
+                        <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="100"/></a>
+                        <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="180"/></a>
                         <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
                     </div>
                         <h1>'.$row['date'].'</h1>
@@ -358,8 +359,9 @@ if($rows['admin'] == 'no'){
                 <br />
                 <h1>'.$row['name'].'</h1>
                 <div class="job-hover">
-                 <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="150"/></a>
-                 <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
+                 <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="80"/></a>
+                 <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="150"/></a>
+                 <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="80"/></a>
                  </div>
                 </section>
                 </article>';
@@ -370,8 +372,9 @@ if($rows['admin'] == 'no'){
                 <article class="large-4 columns">
                 <section class="rest job-over" style="background:'.$row['taskcolor'].';">
                 <div class="job-hover" style="height:100px;">
-                 <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="100"/></a>
-                <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="100"/></a>
+                 <a href="edit-task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/edit.png" width="70"/></a>
+                  <a href="task.php?id='.$id.'&taskid='.$row['taskId'].'"><img class="view-pic" src="img/view.png" width="150"/></a>
+                <a href="dashboard.php?id='.$id.'&deletetaskid='.$row['taskId'].'"><img class="exit-pic" src="img/exit.png" width="70"/></a>
                 </div>
             <h1>'.$row['date'].'</h1>
             <br />
@@ -392,7 +395,7 @@ if($rows['admin'] == 'no'){
             <div class="large-12 columns" >
             <article class="">
         <section class="rest job-over" style="color:white; width:30%;margin:auto;">
-           <a href="create-task.php?id='.$rows['id'].'"><h1 style="font-size:10em;">+</h1></a>
+           <a href="create-task.php?id='.$rows['id'].'"><h1 style="font-size:10em;line-height:150px;">+</h1></a>
         </section>
          <h1 style="color:#4747474; text-align:center;">Create Task</h1>
     </article></div>';      

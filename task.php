@@ -71,7 +71,7 @@ if(isset($_GET['id']) && isset($_GET['taskid'])){
            
 foreach($doc as $row) {
     echo '<section class="large-3 columns document">
-            <a href="'.$row['document'].'" target="_blank"><img src="img/document.png" /></a>
+            <a href="'.$row['document'].'"  download ><img src="img/document.png" /></a>
            <h3>'.$row['document'].'</h3>
        </section>';
     

@@ -125,13 +125,19 @@ if(isset($_POST['create']) && isset($_POST['invite'])){
     </section>
     
    
-        <article class="large-12 columns documentation">
+        <article  class="large-12 columns documentation">
         <h1 class="center white">Objectives and matierials</h1>
-       <input id="uploadButton" type="button" value="Upload" onclick='$("#document").click()'> 
-         <div id="documents">
         
+           
+         <div  id="documents" class="large-12 columns">
+            <div class="large-3 columns" >
+                <section class="" style="color:white; width:30%;margin:auto;cursor: pointer;text-align:center;" onclick='$("#document").click()'>
+                    <h1 style="font-size:12em;line-height:150px;color:white;">+</h1>
+                    <h3 style="color:white;"> add</h3>
+                </section>
+            </div>
        </div>
-    </article>
+      </article>
    
       
  
@@ -276,7 +282,7 @@ $(document).ready(function(){
         // Append with fadeIn see http://stackoverflow.com/a/978731
           
         var item = $(data).hide().fadeIn(800);
-        $('#documents').append(data).slide();
+        $('#documents').prepend(item).slideDown();
 
         // reset form and button
         formData.trigger('reset');
@@ -289,8 +295,8 @@ $(document).ready(function(){
   });
     
    
-   
-});
+});  
+ 
 </script> 
   </body>
 </html>

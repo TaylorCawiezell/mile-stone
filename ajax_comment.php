@@ -17,24 +17,23 @@
 				//If statement to ensire file type is jpeg or png before uploading
 				
 					move_uploaded_file($tmp,$img);
-					
-			
-				
-					
-				
-            
-			
-
-
-        
-   ?> 
+?> 
  
 
 <!-- sending response with new comment and html markup-->
 
 
-<section class="large-3 columns document" style="text-align:center;">
+<section class="large-3 columns" style="text-align:center;">
             <img src="img/document.png" />
-         <p style="color:white;font-size:2em;"><?php echo $imgname;?></p>
+         <p style="color:white;font-size:1.5em;margin-top:-50px;"><?php echo $imgname;?></p>
+        <img src="img/exit.png" class="delete-doc" width="40" style="margin-top:-50px;cursor:pointer;" />
     <input type="hidden" name='file[]' value='<?php echo $img;?>' />
        </section>
+<script>
+$('document').ready(function(){
+    $('.delete-doc').click(function(){
+       $(this).next().attr('name','null');
+       $(this).parent().hide(); 
+    });   
+});
+</script>

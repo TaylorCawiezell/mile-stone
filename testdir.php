@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL); // or E_STRICT
+ini_set("display_errors",1);
+ini_set("memory_limit","1024M");
   function imgDir(){
             if (isset($_FILES['file'])) {
 				$type = str_replace("image/",".",$_FILES['file']['type']);
@@ -17,7 +20,7 @@
             }
 			}
 imgDir();
- 
+ echo $_SERVER['DOCUMENT_ROOT'];
 ?>
 
 <form method="post">
