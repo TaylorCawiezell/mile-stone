@@ -60,6 +60,7 @@ form.addEventListener('submit', function(event) { // listen for form submitting
        
        $('.lightbox2').hide();
         $('.side-nav').hide();
+        $('.settings-box').hide();
    });
     
     $('.lightbox2').click(function(){
@@ -73,6 +74,7 @@ form.addEventListener('submit', function(event) { // listen for form submitting
      $('.menu').click(function(){
          event.stopPropagation();
          $('.lightbox2').hide();
+          $('.settings-box').fadeOut();
     });
 
     $('.person-hover').click(function(){
@@ -284,8 +286,26 @@ form.addEventListener('submit', function(event) { // listen for form submitting
         readURL(this);
     });
     
+   
+    $(".comments").prop({ scrollTop: $(".comments").prop("scrollHeight") });
     
-
+    $('.settings-box').hide();
+    
+    $('.settings').click(function(){
+        $('.settings-box').fadeToggle();
+         $('.side-nav').fadeOut();
+        event.stopPropagation();
+    });
+    
+     $('.ex').click(function(){
+         $('.settings-box').fadeOut();
+     });
+        
+    $('.settings-box').click(function(){
+        $('.side-nav').fadeOut();
+        event.stopPropagation();
+        
+    });
 });
 
 

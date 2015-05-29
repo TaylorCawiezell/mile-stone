@@ -210,13 +210,83 @@ if ($use_sts && isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') {
       <br />
       <section>
         <form id="form"></form>
+        <div class="settings-box">
+                <form id="set-form" action="update.php" method="post">
+                    <div class="row">
+                        <input type="hidden" name="id" value="<?php echo $rows['id'] ?>" />
+                        <div class="large-6 columns">
+                            <input type="text" name="fname" value="<?php echo $rows['fname'] ?>" />
+                        </div>
+                        <div class="large-6 columns">
+                            <input type="text" name="lname" value="<?php echo $rows['lname'] ?>" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-6 columns">
+                           <input type="email" name="email" value="<?php echo $rows['email'] ?>" />
+                        </div>
+                        <div class="large-6 columns">
+                            <input type="text" name="phone" value="<?php echo $rows['phone'] ?>" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="center-it">
+            <div class="radios">
+                <div class="large-3 small-6 columns rad">
+                    <input type="radio" name="color" value="#F72828" id="r0" />
+                    <label class="radio color-choice red" for="r0"></label>    
+                </div>
+                <div class="large-3 small-6 columns">
+                    <input type="radio" name="color" value="#42ACE0" id="r1"  />
+                    <label class="radio color-choice blue" for="r1"></label>
+                </div>
+                <div class="large-3 small-6 columns">
+                    <input type="radio" name="color" value="#00FF18" id="r2" />
+                    <label class="radio color-choice green" for="r2"></label>
+                </div>
+                <div class="large-3 small-6 columns">
+                    <input type="radio" name="color" value="#FAE300" id="r3" />
+                    <label class="radio color-choice yellow" for="r3"></label>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div style="clear:both;"></div>
+        <div class="chosen-color gold-choice" style="text-align:center;">
+            <h1 class="head">Gold</h1>
+            <br />
+            <p>You are very proficent in organizational skills and are somewhat of a perfectionists.</p>
+        </div>
+        <div class="chosen-color blue-choice" style="text-align:center;">
+            <h1 class="head">Blue</h1>
+            <br />
+            <p>You are very outgoing and want to be customer facing!</p>
+        </div>
+        <div class="chosen-color green-choice" style="text-align:center;">
+            <h1 class="head">Green</h1>
+            <br />
+            <p>You are very technical!</p>
+        </div>
+        <div class="chosen-color red-choice" style="text-align:center;">
+            <h1 class="head">Red</h1>
+            <br />
+            <p>You are a born leader!</p>
+        </div>
+                        </div>
+                    </div>
+                    <br />
+                    <button class="up" type="submit">Update</button>
+                    <button type="button" class="ex">Exit</button>
+                </form>
+             </div>
       <article class="large-6 columns type-over">
            
             <div class="type" style="background:<?php echo $rows['color'];?>;">
                 
                 <!--<img src="img/sarah.png" />-->
                 <div class='circular' style="background: url(.<?php echo $rows['image']; ?>) no-repeat center; background-size: 120% 100%;"></div>
-             <div class="type-hover"><img src="img/settings.gif" /></div>
+             <div class="type-hover settings"><img src="img/settings.gif" /></div>
             </div>
          
       </article>

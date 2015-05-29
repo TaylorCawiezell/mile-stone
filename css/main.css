@@ -786,8 +786,82 @@ input[type=checkbox]{
 }
 
 
+.mycomment,.othercomment{
+    border-radius: 10px;
+    background: #00CD06;
+    color:#ffffff;
+    padding:10px;
+    width:80%;
+    margin:auto;
+    
+}
+
+.othercomment{
+    background: #42ACE0;
+}
+
+.mycomment p,.othercomment p{
+     color:#ffffff;
+     
+}
+
+.comment-text{
+    font-size: 1.3em;
+}
+
+.comment-pic{
+    height: 80px;
+    width:80px;
+    border-radius: 50px;
+    float:left;
+    margin-right:2px;
+    margin-left:2px;
+    border:3px solid blue;
+}
+
+.comments{
+    border-radius: 10px;
+    border:1px solid #d3d3d3;
+    min-height: 50px;
+    max-height:420px;
+    margin-bottom:10px;
+    padding:20px;
+    overflow-y: scroll;
+}
 
 
+.team-view{
+    min-height: 50px;
+    max-height:490px;
+    overflow-y: scroll;
+}
 
+body{
+    min-width: 900px;
+}
 
+.settings-box{
+    position: fixed;
+    background: rgba(0,0,0,.7);
+    border-radius:10px;
+    padding:20px;
+    z-index: 99999;
+    width:900px;
+    overflow-y: scroll;
+}
+
+.up,.ex{
+    font-family: 'Quicksand', sans-serif;
+    width:300px;
+    text-align: center;
+    margin: 53px;
+}
+
+.up{
+    background: #00FF18;
+}
+
+.ex{
+    background: #F72828;
+}
 

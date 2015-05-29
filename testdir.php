@@ -26,3 +26,4 @@ imgDir();
 <form method="post">
 <input type="file" name="file" />
 </form>
+

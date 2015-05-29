@@ -62,9 +62,8 @@ if(isset($_GET['id'])){
       <br />
       <br />
       <form id="form"></form>
-
-      <section class="row">
-          <h2 class="center">My Team</h2>
+      <h2 class="center">My Team</h2>
+      <section class="row team-view">
           
           <?php
     foreach ($team as $row) {
@@ -84,7 +83,60 @@ if(isset($_GET['id'])){
          
     }
 ?>
-   
+      </section>
+      <br />
+      <br />
+       <br />
+      <br />
+      <section class="row">
+        <h2 class="center">Team Chat</h2>
+        <div class="comments">
+            <?php 
+             $stmt = $dbh->prepare("
+                                    select fname,image,color,comment,time,teamComment.userId as id,teamComment.id as commentId
+                                    from teamComment
+                                    INNER JOIN user ON user.id=teamComment.userId
+                                    where groupId='".$rows['groupId']."' order by commentId;
+                                    ");
+            $stmt->execute();
+            $comment = $stmt->fetchall(PDO::FETCH_ASSOC); 
+            foreach ($comment as $row) {
+                if($row['id'] == $id){
+                    echo "
+                    <div style='float:left;'>
+                     <p style='float:left;'>".$row['fname']."</p>
+                            <div class='comment-pic' style=".'"'."background: url('".$row['image']."') no-repeat center;background-size: 100% 100%;border-color:".$row['color'].";".'"'." ></div>
+                     </div>
+                     <div class='mycomment' style='float:left;'>
+                            <p class='comment-text'>".$row['comment']."</p>
+                     </div>
+                     <div style='clear:both;'></div>
+                     <p style='text-align:center;'>".$row['time']."</p>";
+                }else{
+                    echo "
+                    <div style='float:left;'>
+                     </div>
+                     <div class='othercomment' style='float:left;'>
+                            <p class='comment-text'>".$row['comment']."</p>
+                     </div>
+                     
+                            <div class='comment-pic' style=".'"'."background: url('".$row['image']."') no-repeat center;background-size: 100% 100%;border-color:".$row['color'].";".'"'." ></div><p style='float:left;'>".$row['fname']."</p>
+                     <div style='clear:both;'></div>
+                     <p style='text-align:center;'>".$row['time']."</p>";
+                }
+            }
+            ?>
+        </div>
+        <form id="form2" method="POST" enctype="multipart/form-data" >
+            <textarea name="comment"></textarea>
+            <button class="login">Send Message</button>
+            <input type="hidden" name="name" value="<?php echo $rows['fname'] ?>" />
+            <input type="hidden" name="picture" value="<?php echo $rows['image'] ?>" />
+            <input type="hidden" name="color" value="<?php echo $rows['color'] ?>" />
+            <input type="hidden" name="id" value="<?php echo $rows['id'] ?>" />
+            <input type="hidden" name="groupid" value="<?php echo $rows['groupId'] ?>" />
+        </form>
+      </section>
     
       <br />
       <br />
@@ -94,5 +146,54 @@ if(isset($_GET['id'])){
     <script>
       $(document).foundation();
     </script>
+      <script>
+$(document).ready(function(){
+  var formData = $('#form2');
+  var submit = $('#submit2');
+  var progressbox     = $('#progressbox');
+	var progressbar     = $('#progressbar');
+	var statustxt       = $('#statustxt');
+	var completed       = '0%';
+    
+    
+  formData.on('submit', function(e) {
+    // prevent default action
+    e.preventDefault();
+    // send ajax request
+    $.ajax({
+      url: 'ajax_comment2.php',
+      type: 'POST',
+            // Type of request to be send, called as method // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+      contentType: false,
+      cache: false,             // To unable request pages to be cached
+      processData:false,
+      data: new FormData(this),//form serizlize data
+      beforeSend: function(){
+        // change submit button value text and disabled it
+        submit.val('Submitting...').attr('disabled', 'disabled');
+      },
+      success: function(data){
+        // Append with fadeIn see http://stackoverflow.com/a/978731
+          
+        var item = $(data).hide().fadeIn(800);
+        $('.comments').append(item).slideDown(500);
+        $('.comments').animate({ 
+                   scrollTop: $(".comments").prop("scrollHeight")}, 0
+                );
+
+        // reset form and button
+        formData.trigger('reset');
+        submit.val('Submit Comment').removeAttr('disabled');
+      },
+      error: function(e){
+        alert(e);
+      }
+    });
+  });
+    
+   
+});  
+ 
+</script> 
   </body>
 </html>
